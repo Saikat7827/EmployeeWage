@@ -1,36 +1,35 @@
 package com.bl.Assignment;
 
-import java.util.Random;
-
 public class WageComputation {
+	public static final int Is_Partime = 1;
+	public static final int Is_Fulltime = 2;
+	public static final int Emp_Rate_Phr = 20;
+	
 
 	public static void main(String[] args) {
 		int empHrs = 0;
-		int halfhrs= 4;
-		int wageperhr = 20;
-		Random random = new Random();
-		int randomnum = random.nextInt(2);
-		
-		if (randomnum == 1)
-		{	
-			int salary = halfhrs * wageperhr;
+		int empWage = 0;
+		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+		switch (empCheck)
+		{
+		case Is_Partime:
 			empHrs = 4;
-			System.out.println("Employee is Present");
-			//empHrs = 4;
-			int salary1 = halfhrs * wageperhr;
-			System.out.println("Employee Wage is " +salary1);
+			break;
+		case Is_Fulltime:
+			empHrs = 8;
+			break;
+			default:
+				empHrs = 0;
+				
 			
-			
-		}	
-			else {
-				System.out.println("Employee is absent");
-		int salary = empHrs * wageperhr;
-		System.out.println("Employee Wage is" +salary );
+		}
+		empWage = empHrs * Emp_Rate_Phr;
+		System.out.println("Emp Wage:" + empWage);
 			}
 		}
 	
 			
-	}
+	
 		
 		
 	
